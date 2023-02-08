@@ -19,13 +19,6 @@ export default function Home() {
     setLocations([...locations, location])
   }
 
-  // function getLatestReply() {
-  //   if (locations.length === 0) {
-  //     return 'Ask a Question!';
-  //   }
-  //   return locations[locations.length - 1].reply;
-  // }
-
   return (
     <>
       <Head>
@@ -35,31 +28,31 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className='flex items-start p-4 bg-green-300 text-black'>
-          <h1>Cookie Stand Admin</h1>
+      <header className='font-serif flex items-start p-4 bg-green-300 text-black'>
+          <h1 className="text-4xl">Cookie Stand Admin</h1>
       </header>
 
       <main className='font-serif'>
           <form className="w-1/2 p-2 mx-auto my-4 bg-green-300" onSubmit={newLocationHandler}>
             <h2 className='text-4xl text-center'>Create Cookie Stand</h2>
             <div className="flex justify-around p-3 my-4">
-              <label for="locationName">Location</label>
+              <label htmlFor="locationName" className="p-1">Location</label>
               <input name="locationName" className="flex-auto pl-1" id="locationName"/>
             </div>
             <div className="flex justify-between">
               <div>
-                <label for="minCustomers" className="block p-1">Min Customers/Hour</label>
+                <label htmlFor="minCustomers" className="block p-1">Min Customers/Hour</label>
                 <input name="minCustomers" className="block p-1" id="minCustomers"/>
               </div>
               <div>
-                <label for="maxCustomers" className="block p-1">Max Customers/Hour</label>
+                <label htmlFor="maxCustomers" className="block p-1">Max Customers/Hour</label>
                 <input name="maxCustomers" className="block p-1" id="maxCustomers"/>
               </div>
               <div>
-                <label for="avgCookies" className="block p-1">Average Cookies/Sale</label>
+                <label htmlFor="avgCookies" className="block p-1">Average Cookies/Sale</label>
                 <input name="avgCookies" className="block p-1" id="avgCookies"/>
               </div>
-              <button className="px-10 py-1 bg-gray-500 text-gray-50 hover:bg-red-500">Create</button>
+              <button className="px-12 py-1 mx-2 bg-green-500 text-gray-50 hover:bg-red-500">Create</button>
             </div>
           </form>
 
@@ -93,7 +86,7 @@ export default function Home() {
 
       </main>
 
-      <footer className='p-4 mt-8 bg-green-300 text-black'>
+      <footer className='font-serif p-4 mt-8 bg-green-300 text-black'>
           <p>&copy; 2023</p>
           <Link href="/careers" className=' text-black hover:text-red-500'>
               Careers

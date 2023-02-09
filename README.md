@@ -10,15 +10,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ### Setup
 
-First, run the development server:
+Download npm by running `npm install -g npm`.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Run `npm run dev`.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

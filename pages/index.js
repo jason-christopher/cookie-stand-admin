@@ -1,11 +1,14 @@
 import Head from 'next/head';
-import Link from 'next/Link';
-import { replies } from '../data';
 import { useState } from 'react';
+import Header from '../components/Header';
+import Form from '../components/Form';
+import Footer from '../components/Footer';
+import Table from '../components/Table';
 
 export default function Home() {
 
   const [locations, setLocations] = useState([])
+  const tableHeaders = ["Location", "6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "Totals"];
 
   function newLocationHandler(event) {
     event.preventDefault();
@@ -28,70 +31,16 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className='font-serif flex items-start p-4 bg-green-300 text-black'>
-          <h1 className="text-4xl">Cookie Stand Admin</h1>
-      </header>
+      <Header />
 
       <main className='font-serif'>
-          <form className="w-1/2 p-2 mx-auto my-4 bg-green-300" onSubmit={newLocationHandler}>
-            <h2 className='text-4xl text-center'>Create Cookie Stand</h2>
-            <div className="flex justify-around p-3 my-4">
-              <label htmlFor="locationName" className="p-1">Location</label>
-              <input name="locationName" className="flex-auto pl-1" id="locationName"/>
-            </div>
-            <div className="flex justify-between">
-              <div>
-                <label htmlFor="minCustomers" className="block p-1">Min Customers/Hour</label>
-                <input name="minCustomers" className="block p-1" id="minCustomers"/>
-              </div>
-              <div>
-                <label htmlFor="maxCustomers" className="block p-1">Max Customers/Hour</label>
-                <input name="maxCustomers" className="block p-1" id="maxCustomers"/>
-              </div>
-              <div>
-                <label htmlFor="avgCookies" className="block p-1">Average Cookies/Sale</label>
-                <input name="avgCookies" className="block p-1" id="avgCookies"/>
-              </div>
-              <button className="px-12 py-1 mx-2 bg-green-500 text-gray-50 hover:bg-red-500">Create</button>
-            </div>
-          </form>
+        <Form newLocationHandler={newLocationHandler} />
 
-          {/* Table of Responses */}
-          <table className="w-1/2 mx-auto my-4">
-              <thead>
-                  <tr>
-                      <th className="border border-gray-700">No.</th>
-                      <th className="border border-gray-700">Location</th>
-                      <th className="border border-gray-700">Minimum Customer/Hour</th>
-                      <th className="border border-gray-700">Maximum Customer/Hour</th>
-                      <th className="border border-gray-700">Average Cookies/Sale</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  {
-                    locations.map((item, idx) => {
-                      return (
-                        <tr key={idx}>
-                          <td className="pl-2 border border-gray-700">{item.id}</td>
-                          <td className="pl-2 border border-gray-700">{item.name}</td>
-                          <td className="pl-2 border border-gray-700">{item.minCustomers}</td>
-                          <td className="pl-2 border border-gray-700">{item.maxCustomers}</td>
-                          <td className="pl-2 border border-gray-700">{item.avgCookies}</td>
-                      </tr>
-                      )
-                    })
-                  }
-              </tbody>
-          </table>
+        <Table locations={locations} />
 
       </main>
 
-      <footer className='font-serif p-4 mt-8 bg-green-300 text-black'>
-          <p>&copy; 2023</p>
-          <Link href="/careers" className=' text-black hover:text-red-500'>
-              Careers
-          </Link>
-      </footer>
+      <Footer locations={locations}/>
     </>
   );
 }

@@ -1,4 +1,4 @@
-# Class 37/38
+# Class 37/38/39
 
 ## Lab Name: Cookie Stand Admin
 
@@ -6,13 +6,30 @@
 
 ### Description
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+* This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+* This is the admin page of the Cookie Stands project with a Next.js front-end connected to a Django back-end server acting as an API connected to a PostgreSQL database.
+* Locations can be created or deleted from the main admin dashboard once a user logs in.
 
 ### Setup
 
-Download npm by running `npm install -g npm`.
+* Clone the `cookie-stand-api` repo from my GitHub account and follow the directions to set up and run the server.
+* In this repo:
+  * Download npm by running `npm install -g npm`.
+  * Run `mpn i` to install all dependencies from the `package.json` file.
+  * Create a `.env.local` file with the following info:
 
-Run `npm run dev`.
+  ```python
+  NEXT_PUBLIC_API_URL=http://localhost:8000
+  NEXT_PUBLIC_RESOURCE_URL=http://localhost:8000/api/v1/cookie_stands/
+  ```
+
+  * Run `npm run dev`.
+  * Sign in to the login page using:
+    * Username: `test`
+    * Password: `uncommon`
+  * You should be able to see the table of locations in the database and be able to create/delete locations.
+
+### Additional Setup Directions from Next.js Documentation
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

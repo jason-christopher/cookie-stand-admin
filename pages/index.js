@@ -2,12 +2,10 @@ import Head from 'next/head';
 import { useAuth } from '../contexts/auth';
 import CookieStandAdmin from '@/components/CookieStandAdmin';
 import LoginForm from '@/components/LoginForm';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 
 export default function Home() {
 
-  const { user, login } = useAuth();
+  const { user, login, logout } = useAuth();
 
   return (
     <div className="p-4">
@@ -16,7 +14,7 @@ export default function Home() {
       </Head>
 
       {user ?
-        <CookieStandAdmin className="font-serif"/>
+        <CookieStandAdmin className="font-serif" login={login} />
         :
         <LoginForm onLogin={login} />
       }

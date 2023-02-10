@@ -20,12 +20,12 @@ export default function CookieStandForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="w-1/2 p-2 mx-auto my-4 bg-green-300 font-serif">
+    <form onSubmit={handleSubmit} className="w-1/2 p-2 mx-auto my-4 bg-green-300 border border-black rounded-2xl shadow-gray-500 shadow-md font-serif">
       <fieldset className="">
         <legend className="text-center text-4xl py-3">Create Cookie Stand</legend>
         <section className="flex py-2">
-          <label htmlFor="location" className="pl-2">Location:</label>
-          <input placeholder='location' name='location' />
+          <label htmlFor="location" className="px-2">Location:</label>
+          <input className="px-3 text-center border border-gray-500 shadow-md rounded-md" placeholder='location' name='location' />
         </section>
         <section className="flex justify-between py-2">
           <div>
@@ -40,7 +40,7 @@ export default function CookieStandForm() {
             <label htmlFor="average" className="block px-2 text-center">Average Cookies per Sale</label>
             <input className="px-3 text-center border border-gray-500 shadow-md rounded-md" placeholder='average' name='average' />
           </div>
-          <button className="px-9 py-4 bg-green-500 text-black text-xl rounded-lg hover:bg-red-500 hover:rounded-2xl transition-all duration-200 cursor-pointer">Create</button>
+          <button className="px-9 py-4 bg-green-500 text-black text-xl rounded-lg border border-black shadow-gray-500 shadow-md hover:bg-red-500 hover:rounded-2xl transition-all duration-200 cursor-pointer">Create</button>
         </section>
       </fieldset>
     </form>

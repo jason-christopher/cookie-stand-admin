@@ -1,8 +1,8 @@
 export default function LoginForm({ onLogin }) {
 
   async function handleSubmit(event) {
-      event.preventDefault();
-      onLogin(event.target.username.value, event.target.password.value);
+    event.preventDefault();
+    onLogin(event.target.username.value, event.target.password.value);
   }
 
   return (

@@ -1,4 +1,4 @@
-# Class 37/38/39
+# Class 37/38/39/41
 
 ## Lab Name: Cookie Stand Admin
 
@@ -19,8 +19,8 @@
   * Create a `.env.local` file with the following info:
 
   ```python
-  NEXT_PUBLIC_API_URL=http://localhost:8000
-  NEXT_PUBLIC_RESOURCE_URL=http://localhost:8000/api/v1/cookie_stands/
+  NEXT_PUBLIC_API_URL=https://cookie-stand-api-lemon.vercel.app
+  NEXT_PUBLIC_RESOURCE_URL=https://cookie-stand-api-lemon.vercel.app/api/v1/cookie_stands/
   ```
 
   * Run `npm run dev`.
@@ -28,6 +28,10 @@
     * Username: `test`
     * Password: `uncommon`
   * You should be able to see the table of locations in the database and be able to create/delete locations.
+
+OR
+
+* Just go to the [deployed front-end](https://cookie-stand-admin-weld-delta.vercel.app/) and log in.
 
 ### Additional Setup Directions from Next.js Documentation
 
